@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive portfolio: Using Html, Css and JavaScript — Devadharshini V</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>✨</text></svg>">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap" role="main">
+    <div class="stage" aria-label="Slideshow stage">
+
+      <!-- HUD: counter -->
+      <div class="hud">
+        <div class="counter" id="counter">1 / 8</div>
+      </div>
+
+      <!-- Toolbar: actions -->
+      <div class="toolbar">
+        <button class="tbtn" id="playToggle" title="Play/Pause">▶ Play</button>
+      </div>
+
+      <!-- Slide 1 -->
+      <section class="slide active" data-title="Introduction" data-index="1">
+        <div class="card accent">
+          <h1 class="lead">Interactive portfolio: Using Html, CSS and Java script</h1>
+          <p class="muted">Created by— <strong>Devadharshini. V</strong></p>
+        </div>
+        <div class="grid">
+          <div class="card"><h2>Location</h2><p>📍 O.M. Mangalam, Kanchipuram District</p></div>
+          <div class="card"><h2>Contact</h2><p>📱 9791701685<br/>✉️ devadharhini0@gmail.com</p></div>
+        </div>
+        <p class="card">Welcome! This interactive portfolio presents all details from my presentation in a dark, neon-styled slideshow.</p>
+      </section>
+
+      <!-- Slide 2 -->
+      <section class="slide" data-title="Career Objective" data-index="2">
+        <h1>Career Objective</h1>
+        <div class="card">
+          <p class="lead">💄 To pursue a successful career in the <strong>beauty industry</strong>, become a <strong>professional beautician</strong>, and inspire confidence in others through my work.</p>
+        </div>
+      </section>
+
+      <!-- Slide 3 -->
+      <section class="slide" data-title="Dream Project" data-index="3">
+        <h1>Dream Project / Future Profile</h1>
+        <div class="card accent">
+          <h2>Founder — Blood Donation Office</h2>
+          <p class="muted">“A Drop of Blood, A Gift of Life” ❤️</p>
+        </div>
+        <div class="grid">
+          <div class="card"><strong>1.</strong> Open a dedicated Blood Donation Office</div>
+          <div class="card"><strong>2.</strong> Collaborate with nearby hospitals 🏥</div>
+          <div class="card"><strong>3.</strong> Provide urgent blood support to patients in need</div>
+          <div class="card"><strong>4.</strong> Inspire more people to become regular donors</div>
+        </div>
+        <p class="card"><strong>Motto:</strong> “Donate Blood, Save Lives”</p>
+      </section>
+
+      <!-- Slide 4 -->
+      <section class="slide" data-title="Education" data-index="4">
+        <h1>Education</h1>
+        <div class="card">
+          <h2>Qualification</h2>
+          <p>Bachelor of Computer Applications (B.C.A.)</p>
+        </div>
+        <div class="grid">
+          <div class="card"><h2>Location</h2><p>Arakkonam, Attupakkam</p></div>
+          <div class="card"><h2>University</h2><p>Thiruvalluvar University</p></div>
+        </div>
+      </section>
+
+      <!-- Slide 5 -->
+      <section class="slide" data-title="Skills" data-index="5">
+        <h1>Skills</h1>
+        <div class="card">
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <span class="pill">English Typing</span>
+            <span class="pill">English Communication</span>
+            <span class="pill">Problem Solving</span>
+            <span class="pill">Creativity</span>
+          </div>
+          <p style="margin-top:10px" class="muted">English Typing (Upper & Lower Case) · English Communication (Mudhalvan Course)</p>
+        </div>
+      </section>
+
+      <!-- Slide 6 -->
+      <section class="slide" data-title="Projects & Achievements" data-index="6">
+        <h1>Projects & Achievements</h1>
+        <div class="grid">
+          <div class="card"><strong>Project Completed</strong><p class="muted">English Communications</p></div>
+          <div class="card"><strong>Achievement</strong><p class="muted">Achieved high typing speed in English</p></div>
+        </div>
+      </section>
+
+      <!-- Slide 7 -->
+      <section class="slide" data-title="Languages" data-index="7">
+        <h1>Languages Known</h1>
+        <div class="grid">
+          <div class="card"><strong>Tamil</strong><p class="muted">Fluent</p></div>
+          <div class="card"><strong>English</strong><p class="muted">Basic</p></div>
+        </div>
+      </section>
+
+      <!-- Slide 8 -->
+      <section class="slide" data-title="Inspiration & Learning" data-index="8">
+        <h1>Inspiration & Learning</h1>
+        <div class="card"><p>🌟 Inspired by <strong>P.V. Sindhu – Olympic Medalist & Badminton Champion</strong></p></div>
+        <div class="card">
+          <ul>
+            <li>Her hard work and dedication motivates me</li>
+            <li>She proved that women can achieve global success</li>
+            <li>A true role model in sports and life 🏸✨</li>
+          </ul>
+        </div>
+        <div class="card"><p>Completed <strong>Naan Mudhalvan</strong> course: Overview — English Communication</p></div>
+      </section>
+
+      <!-- Controls -->
+      <div class="controls" role="navigation" aria-label="Slideshow controls">
+        <button class="btn" id="prevBtn" title="Previous (←)">◀ Prev</button>
+        <button class="btn" id="nextBtn" title="Next (→)">Next ▶</button>
+      </div>
+
+      <!-- Dots -->
+      <div class="dots" id="dots" aria-label="Slide dots"></div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+:root {
+  --bg:#0b0f14;
+  --panel:#0f1621;
+  --text:#e5f1ff;
+  --muted:#9db4c6;
+  --accent:#00e5ff;
+  --accent2:#ff4ecd;
+  --ring: 0 0 0 2px rgba(0,229,255,.35), 0 0 24px rgba(255,78,205,.25);
+}
+
+* { box-sizing:border-box; margin:0; padding:0 }
+html,body { height:100% }
+body {
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(1000px 600px at 10% 10%, rgba(0,229,255,.08), transparent 55%),
+              radial-gradient(900px 500px at 90% 80%, rgba(255,78,205,.08), transparent 55%),
+              var(--bg);
+  color:var(--text);
+  overflow:hidden;
+}
+
+/* Layout */
+.wrap { position:relative; height:100vh; width:100%; display:flex; align-items:center; justify-content:center; padding:24px; }
+.stage {
+  position:relative; width:min(1100px,94%); height:min(760px,86vh);
+  background:linear-gradient(180deg, rgba(15,22,33,.9), rgba(15,22,33,.8));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px; padding:32px 36px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06) inset;
+  overflow:hidden;
+}
+
+/* Slide base */
+.slide { position:absolute; inset:0; padding:36px; overflow:auto; display:none; }
+.slide.active { display:block; animation:fadeIn .55s ease both; }
+@keyframes fadeIn { from{ opacity:0; transform: translateY(16px) scale(.98);} to{ opacity:1; transform:none; } }
+
+/* Typography */
+h1 { font-size:1.9rem; margin-bottom:10px; color:var(--text) }
+h2 { font-size:1.35rem; margin-bottom:10px; color:var(--text) }
+p { line-height:1.7; color:var(--muted); font-size:1rem }
+.lead { font-size:1.05rem; color:var(--text) }
+
+/* Panels / cards */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius:14px; padding:18px; margin:14px 0; backdrop-filter: blur(6px);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.03) inset, 0 10px 24px rgba(0,0,0,.25);
+}
+.card.accent { border-color: rgba(0,229,255,.35); box-shadow: var(--ring); }
+
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px; }
+.pill { display:inline-block; padding:8px 12px; border-radius:999px; font-weight:700; color:#031016;
+  background:linear-gradient(90deg, var(--accent), var(--accent2)); }
+
+/* HUD */
+.hud { position:absolute; inset:18px 18px auto auto; display:flex; align-items:center; gap:10px; }
+.counter { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); color:var(--text); padding:6px 12px; border-radius:999px; font-weight:800; }
+
+.dots { position:absolute; left:50%; transform:translateX(-50%); bottom:18px; display:flex; gap:8px; }
+.dot { width:12px; height:12px; border-radius:999px; background: rgba(255,255,255,.22); border:1px solid rgba(255,255,255,.18); cursor:pointer; transition:.25s; }
+.dot.active { background: linear-gradient(90deg, var(--accent), var(--accent2)); box-shadow: var(--ring); transform: scale(1.08); }
+
+.controls { position:absolute; left:50%; transform:translateX(-50%); bottom:54px; display:flex; gap:12px; }
+.btn {
+  background: radial-gradient(120px 60px at 30% 30%, rgba(0,229,255,.25), rgba(255,78,205,.18)), rgba(255,255,255,.06);
+  color:var(--text); border:1px solid rgba(255,255,255,.16); padding:10px 16px; border-radius:12px; font-weight:800; cursor:pointer;
+  transition:.25s;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.toolbar { position:absolute; left:18px; top:18px; display:flex; gap:10px }
+.tbtn { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); color:var(--text); padding:6px 10px; border-radius:10px; cursor:pointer; font-weight:700 }
+
+/* Responsive */
+@media (max-width:760px) {
+  .stage { padding:18px }
+  .slide { padding:18px }
+  h1 { font-size:1.5rem }
+}
